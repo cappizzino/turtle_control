@@ -1,0 +1,13 @@
+<launch>
+
+	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+
+	<!-- Launch my control node -->
+	<node pkg="turtle_control" type="basic_controller" name="controller_1" output="screen">
+		<remap from="cmd_vel" to="turtle1/cmd_vel"/>
+		<param name="~linear_speed" value="1.0"/>
+		<param name="~angular_speed" value="1.0"/>
+	</node>
+
+
+</launch>

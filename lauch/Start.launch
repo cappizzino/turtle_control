@@ -1,0 +1,13 @@
+<launch>
+
+	<node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+
+	<!-- Launch my control node -->
+	<node pkg="turtle_control" type="go_to" name="go_to" output="screen">
+		<remap from="cmd_vel" to="turtle1/cmd_vel"/>
+		<param name="~x_goal" value="8.0"/>
+		<param name="~y_goal" value="8.0"/>
+	</node>
+
+
+</launch>
